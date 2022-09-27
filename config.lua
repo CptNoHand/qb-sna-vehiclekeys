@@ -3,7 +3,7 @@ Config = {}
 Config.NoLockVehicles = {}
 
 Config.KeyMasterLocation = vector4(170.01, -1799.37, 28.32, 326.65)
-Config.KeyPrice = 300
+Config.KeyPrice = 250
 Config.ResetPrice = 1000
 
 Config.HotwireChance = 0.5 -- Chance for successful hotwire or not
