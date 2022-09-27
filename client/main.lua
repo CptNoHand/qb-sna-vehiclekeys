@@ -26,7 +26,24 @@ local function AttemptPoliceAlert(type)
             chance = Config.PoliceNightAlertChance
         end
         if math.random() <= chance then
-           TriggerServerEvent('police:server:policeAlert', 'Vehicle theft in progress. Type: ' .. type)
+            local data = exports['cd_dispatch']:GetPlayerInfo()
+            TriggerServerEvent('cd_dispatch:AddNotification', {
+                job_table = {'police'}, 
+                coords = data.coords,
+                title = '10-15 - Stealing Car',
+                message = 'A '..data.sex..' stealing a car at '..data.street, 
+                flash = 0,
+                unique_id = tostring(math.random(0000000,9999999)),
+                blip = {
+                    sprite = 431, 
+                    scale = 1.2, 
+                    colour = 3,
+                    flashes = false, 
+                    text = '911 - Stealing Car',
+                    time = (5*60*1000),
+                    sound = 1,
+                }
+            })
         end
         AlertSend = true
         SetTimeout(Config.AlertCooldown, function()
