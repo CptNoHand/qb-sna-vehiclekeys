@@ -64,11 +64,6 @@ RegisterNetEvent('qb-vehiclekeys:client:ToggleEngine', function()
     end
 end)
 
-RegisterKeyMapping('engine', Lang:t("info.engine"), 'keyboard', 'O')
-RegisterCommand('engine', function()
-    TriggerEvent("qb-vehiclekeys:client:ToggleEngine")
-end)
-
 
 function HasKeys(plate)
 	QBCore.Functions.TriggerCallback('qb-vehiclekeys:server:HasKey', function(result)
